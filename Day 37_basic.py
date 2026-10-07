@@ -1,0 +1,26 @@
+# Assign Cookies - Greedy Algorithm
+
+def find_content_children(greed, cookies):
+    greed.sort()
+    cookies.sort()
+
+    child = 0
+    cookie = 0
+
+    while child < len(greed) and cookie < len(cookies):
+        if cookies[cookie] >= greed[child]:
+            child += 1
+        cookie += 1
+
+    return child
+
+
+# Example Input
+greed = [1, 2, 3]
+cookies = [1, 1]
+
+result = find_content_children(greed, cookies)
+
+print("Greed Factors:", greed)
+print("Cookie Sizes:", cookies)
+print("Happy Children:", result)
